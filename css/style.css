@@ -16,7 +16,7 @@
 .cone{
     position: absolute;
     bottom: 0;
-    width: 60px;
+    width: 60px;   
     animation: cone-animacao 2s infinite linear;
 }
 
