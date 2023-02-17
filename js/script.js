@@ -14,12 +14,24 @@ const salto = () => {
 
 const loop = setInterval(() => {
 
-    const conePosicao = cone.offsetLeft
+    console.log('loop')
 
-    if(conePosicao <= 168){
+    const conePosicao = cone.offsetLeft
+    const personPosicao = +window.getComputedStyle(person).bottom.replace('px', '')
+
+    if(conePosicao <= 168 && conePosicao > 0 && personPosicao < 40){
 
         cone.style.animation = 'none'
         cone.style.left = `${conePosicao}px`
+
+        person.style.animation = 'none'
+        person.style.bottom = `${personPosicao}px`
+
+        person.src = "imagens/onibus-bateu.png"
+        person.style.width = '70px'
+        person.style.marginLeft = '90px'
+
+        clearInterval(loop)
 
     }
 
